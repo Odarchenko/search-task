@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - 'spec/services/json_search_spec.rb'
+Layout/LineLength:
+  Max: 120
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Security/JSONLoad:
+  Enabled: false
