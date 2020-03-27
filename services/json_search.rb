@@ -27,12 +27,12 @@ class JsonSearch
 
   # generate search regex
   def search_query
-    @search_query ||= search_values.map { |search_value| SEARCH_REGEX % search_value }.join('') + filter_query
+    @search_query ||= search_values.each_with_object("") { |search_value, query_string| query_string << SEARCH_REGEX % search_value } + filter_query
   end
 
   # generate filter regex
   def filter_query
-    filter_values.map { |filter_value| FILTER_REGEX % filter_value }.join('')
+    filter_values.each_with_object("") { |filter_value, query_string| query_string << FILTER_REGEX % filter_value  }
   end
 
   def search_values
