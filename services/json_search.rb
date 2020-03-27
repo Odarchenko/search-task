@@ -4,8 +4,8 @@ require 'json'
 class JsonSearch
   REGEX_WORD_IN_QUOTES = /"([^"]*)"/.freeze # regex for search in ""
   FILTER_WORD_REGEX = /--(.*)/.freeze # regex for search filter keys --
-  SEARCH_REGEX = '(?=.*?%s)'.freeze # regex for search query
-  FILTER_REGEX = '^((?!%s).)*$'.freeze # regex for filter query
+  SEARCH_REGEX = '(?i)(?=.*?%s)'.freeze # regex for search query
+  FILTER_REGEX = '^(?i)((?!%s).)*$'.freeze # regex for filter query
 
   attr_reader :data, :search_string
 
